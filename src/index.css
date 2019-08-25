@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "./my_normalize.css";
+:root {
+  --test: red;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.heading-primary {
+  font-size: 6rem;
+}
+
+.heading-secondary {
+  font-size: 4.5rem;
+}
+
+.heading-teritary {
+  font-size: 1.6rem;
 }
