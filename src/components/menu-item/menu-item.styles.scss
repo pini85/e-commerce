@@ -128,10 +128,12 @@
 .menu-item:hover .menu-item__content-3,
 .menu-item:hover .menu-item__content-4,
 .menu-item:hover .menu-item__content-5 {
+  cursor: pointer;
   background: rgba(white, 0.9);
 }
 .menu-item:hover .menu-item__content-1,
 .menu-item:hover .menu-item__content-2,
 .menu-item:hover .menu-item__content-3 {
+  cursor: pointer;
   transform: scale(1.1);
 }
