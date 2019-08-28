@@ -4,10 +4,6 @@ import ShopPage from "./pages/shop/shop.component";
 
 import HomePage from "./pages/homepage/homepage.component";
 
-const test = () => {
-  return <div>hi</div>;
-};
-
 function App() {
   return (
     <div>

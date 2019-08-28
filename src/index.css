@@ -1,6 +1,13 @@
 @import "./my_normalize.css";
 :root {
-  --test: red;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  overflow: hidden;
 }
 
 .heading-primary {

@@ -1,0 +1,86 @@
+.card {
+  width: 322px;
+  display: inline-block;
+  border: 1px solid #ece9e6;
+
+  &__img {
+    background-size: cover;
+    background-position: center;
+    height: 16rem;
+    width: 16rem;
+    object-fit: contain;
+
+    &-container {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+      width: 32rem;
+      height: 22rem;
+    }
+  }
+  &__sale {
+    font-size: 1.5rem;
+    background: -webkit-linear-gradient(#ed213a, #93291e);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &-container {
+      opacity: 0; //card slider will make it opacity 1
+      background: #ed213921;
+      border: 1px solid rgba(black, 0.1);
+      width: 14rem;
+      position: absolute;
+      text-align: center;
+      top: 17rem;
+      left: 21rem;
+      z-index: 1;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__bottom {
+    opacity: 0;
+    width: 322px;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+  }
+
+  &__divider {
+    background-color: gray;
+    opacity: 0.3;
+    height: 3rem;
+    width: 1px;
+    margin-left: auto;
+  }
+
+  &__price {
+    font-size: 2rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+  &__exclusive {
+    text-align: center;
+    font-size: 1.5rem;
+    background: -webkit-linear-gradient(#fbf5b7, #b38728);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &-container {
+      opacity: 0; //card slider will amke it opacity 1;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background-color: #fbf5b72d;
+    }
+  }
+}
