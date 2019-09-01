@@ -1,4 +1,6 @@
 @import "./my_normalize.css";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 :root {
 }
 
@@ -7,17 +9,48 @@ html {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .heading-primary {
   font-size: 6rem;
+  text-align: center;
 }
 
 .heading-secondary {
   font-size: 4.5rem;
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .heading-teritary {
   font-size: 1.6rem;
+  text-align: center;
+}
+
+.slick-list {
+  /* margin: 0 20rem; */
+}
+.slick-arrow {
+  display: absolute !important;
+  z-index: 1;
+  color: transparent;
+  background-color: red;
+  font-size: 3rem;
+}
+.slick-arrow.slick-prev {
+  /* transform: translatex(370%); */
+}
+.slick-arrow.slick-next {
+  /* transform: translate(-11rem); */
+}
+.slick-slider {
+  margin: 30px auto 50px;
+}
+.slick-slide {
+  /* width: auto !important; */
+}
+
+.test {
+  margin: 0 5rem;
 }

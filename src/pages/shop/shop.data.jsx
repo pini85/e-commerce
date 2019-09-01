@@ -101,6 +101,7 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
+        index: 0,
         sale: true,
         salePercentage: 10,
         exclusive: false,
@@ -110,6 +111,7 @@ const SHOP_DATA = [
       },
       {
         id: 2,
+        index: 1,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -119,6 +121,7 @@ const SHOP_DATA = [
       },
       {
         id: 3,
+        index: 2,
         sale: true,
         salePercentage: 30,
         exclusive: false,
@@ -128,6 +131,7 @@ const SHOP_DATA = [
       },
       {
         id: 4,
+        index: 3,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -137,6 +141,7 @@ const SHOP_DATA = [
       },
       {
         id: 5,
+        index: 4,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -146,6 +151,7 @@ const SHOP_DATA = [
       },
       {
         id: 6,
+        index: 5,
         sale: true,
         salePercentage: 5,
         exclusive: false,
@@ -155,6 +161,7 @@ const SHOP_DATA = [
       },
       {
         id: 7,
+        index: 6,
         sale: true,
         salePercentage: 80,
         exclusive: false,
@@ -164,6 +171,7 @@ const SHOP_DATA = [
       },
       {
         id: 8,
+        index: 7,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -180,6 +188,7 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
+        index: 0,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -189,6 +198,7 @@ const SHOP_DATA = [
       },
       {
         id: 2,
+        index: 1,
         sale: true,
         salePercentage: "10",
         exclusive: false,
@@ -198,6 +208,7 @@ const SHOP_DATA = [
       },
       {
         id: 3,
+        index: 2,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -207,6 +218,7 @@ const SHOP_DATA = [
       },
       {
         id: 4,
+        index: 3,
         sale: true,
         salePercentage: "5",
         exclusive: true,
@@ -216,6 +228,7 @@ const SHOP_DATA = [
       },
       {
         id: 5,
+        index: 4,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -232,6 +245,7 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
+        index: 0,
         sale: true,
         salePercentage: "15",
         exclusive: false,
@@ -241,6 +255,7 @@ const SHOP_DATA = [
       },
       {
         id: 2,
+        index: 1,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -250,6 +265,7 @@ const SHOP_DATA = [
       },
       {
         id: 3,
+        index: 2,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -259,6 +275,7 @@ const SHOP_DATA = [
       },
       {
         id: 4,
+        index: 3,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -268,6 +285,7 @@ const SHOP_DATA = [
       },
       {
         id: 5,
+        index: 4,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -277,6 +295,7 @@ const SHOP_DATA = [
       },
       {
         id: 6,
+        index: 5,
         sale: true,
         salePercentage: "7",
         exclusive: false,
@@ -286,6 +305,7 @@ const SHOP_DATA = [
       },
       {
         id: 7,
+        index: 6,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -305,6 +325,7 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
+        index: 0,
         sale: true,
         salePercentage: "7",
         exclusive: false,
@@ -314,6 +335,7 @@ const SHOP_DATA = [
       },
       {
         id: 2,
+        index: 1,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -323,6 +345,7 @@ const SHOP_DATA = [
       },
       {
         id: 3,
+        index: 2,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -332,6 +355,7 @@ const SHOP_DATA = [
       },
       {
         id: 4,
+        index: 3,
         sale: false,
         salePercentage: "",
         exclusive: true,
@@ -341,6 +365,7 @@ const SHOP_DATA = [
       },
       {
         id: 5,
+        index: 4,
         sale: false,
         salePercentage: "",
         exclusive: false,
@@ -350,6 +375,7 @@ const SHOP_DATA = [
       },
       {
         id: 6,
+        index: 5,
         sale: false,
         salePercentage: "",
         exclusive: true,

@@ -6,31 +6,33 @@ class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: props.data,
-      item: props.data[0]
+      title: props.data.title,
+      items: props.data.items,
+      item: props.data.items[0]
     };
+    console.log(props);
   }
 
   nextProperty = () => {
     const newIndex = this.state.item.index + 1;
     this.setState({
-      item: this.props.data[newIndex]
+      item: this.props.data.items[newIndex]
     });
-    console.log(this.state.item);
   };
 
   prevProperty = () => {
     const newIndex = this.state.item.index - 1;
     this.setState({
-      item: this.props.data[newIndex]
+      item: this.props.data.items[newIndex]
     });
-    console.log(this.state.item);
   };
 
   render() {
-    const { item, items } = this.state;
+    const { item, items, title } = this.state;
+
     return (
       <div className="container">
+        <h2 className="heading-secondary">{title}</h2>
         <div className="button-container">
           <div className="prev__button-wrapper">
             <button

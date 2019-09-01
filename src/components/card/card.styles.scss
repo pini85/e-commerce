@@ -1,7 +1,8 @@
 .card {
-  width: 322px;
   display: inline-block;
-  border: 1px solid #ece9e6;
+  // border: 1px solid #ece9e6;
+  width: 100%;
+  padding: 0 10%;
 
   &__img {
     background-size: cover;
@@ -18,8 +19,8 @@
       justify-content: center;
 
       background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-      width: 32rem;
-      height: 22rem;
+      // width: 32rem;
+      // height: 22rem;
     }
   }
   &__sale {
@@ -29,22 +30,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     &-container {
-      opacity: 0; //card slider will make it opacity 1
       background: #ed213921;
       border: 1px solid rgba(black, 0.1);
       width: 14rem;
       position: absolute;
       text-align: center;
-      top: 17rem;
-      left: 21rem;
+      top: 70%;
+      left: 73%;
+
       z-index: 1;
       transform: rotate(-45deg);
     }
   }
 
   &__bottom {
-    opacity: 0;
-    width: 322px;
+    width: 100%;
     background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
     display: flex;
     align-items: center;
@@ -76,7 +76,6 @@
     -webkit-text-fill-color: transparent;
 
     &-container {
-      opacity: 0; //card slider will amke it opacity 1;
       width: 100%;
       position: absolute;
       top: 0;
