@@ -1,31 +1,37 @@
 .card {
   display: inline-block;
-  // border: 1px solid #ece9e6;
+  padding: 0 5%;
   width: 100%;
-  padding: 0 10%;
+  border-radius: 5px;
 
   &__img {
     background-size: cover;
     background-position: center;
     height: 16rem;
     width: 16rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
     object-fit: contain;
 
     &-container {
+      background-image: linear-gradient(
+        to top,
+        var(--color-primary-dark) 0%,
+        var(--color-primary) 100%
+      );
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-
-      background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+      background-color: transparent;
       // width: 32rem;
       // height: 22rem;
     }
   }
   &__sale {
     font-size: 1.5rem;
-    background: -webkit-linear-gradient(#ed213a, #93291e);
+    background: red;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -35,9 +41,8 @@
       width: 14rem;
       position: absolute;
       text-align: center;
-      top: 70%;
-      left: 73%;
-
+      top: 74%;
+      left: 80%;
       z-index: 1;
       transform: rotate(-45deg);
     }
@@ -45,14 +50,16 @@
 
   &__bottom {
     width: 100%;
-    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    color: white;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
   &__title {
     font-size: 2.5rem;
-    margin-left: 2rem;
+    text-align: center;
   }
 
   &__divider {
@@ -65,16 +72,12 @@
 
   &__price {
     font-size: 2rem;
-    margin-left: 1rem;
-    margin-right: 2rem;
+    font-weight: 700;
   }
   &__exclusive {
     text-align: center;
     font-size: 1.5rem;
-    background: -webkit-linear-gradient(#fbf5b7, #b38728);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    color: gold;
     &-container {
       width: 100%;
       position: absolute;

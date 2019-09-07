@@ -10,7 +10,6 @@ class Carousel extends React.Component {
       items: props.data.items,
       item: props.data.items[0]
     };
-    console.log(props);
   }
 
   nextProperty = () => {

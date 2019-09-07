@@ -17,7 +17,7 @@ class Carousel extends Component {
       <div className="test">
         <Slider {...settings}>
           {this.props.data.map(items => {
-            return <Card key={items.id} property={items} index={items.index} />;
+            return <Card key={items.id} property={items} />;
           })}
         </Slider>
       </div>

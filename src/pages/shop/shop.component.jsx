@@ -13,20 +13,23 @@ class ShopPage extends React.Component {
   }
 
   render() {
-    const sixItems = this.state.collections.map(data => {
-      return data.items.splice(1, 6);
-    });
+    const data = this.state.collections;
 
     return (
       <div>
-        {sixItems.map(items => {
-          const title = items.title;
+        {data.map(item => {
+          const sixItems = [...item.items].splice(1, 6);
           return (
             <div>
-              <Carousel data={items}></Carousel>
-              {/* <div>
-                  <MoreItems item={items.title}></MoreItems>
-                </div> */}
+              <div className="item__title">
+                <h2 className="heading-secondary">{item.title}</h2>
+              </div>
+              <div>
+                <Carousel key={item.id} data={sixItems}></Carousel>;
+              </div>
+              <div className="item__show-more">
+                <h3 className="heading-teritary">{`show more ${item.title}`}</h3>
+              </div>
             </div>
           );
         })}

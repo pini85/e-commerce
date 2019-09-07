@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.styles.scss";
 
-const Card = ({ property, index }) => {
+const Card = ({ property }) => {
   const exclusive = () => {
     if (property.exclusive === true) {
       return (
@@ -26,11 +26,11 @@ const Card = ({ property, index }) => {
         {exclusive()}
         <img src={"" + property.imageUrl} className="card__img" alt="" />
         {sale()}
-      </div>
-      <div className="card__bottom">
-        <div className="card__title">{property.name}</div>
-        <div className="card__divider"></div>
-        <div className="card__price">{property.price}$</div>
+        <div className="card__bottom">
+          <div className="card__title">{property.name}</div>
+
+          <div className="card__price">{property.price}$</div>
+        </div>
       </div>
     </div>
   );

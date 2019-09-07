@@ -1,0 +1,17 @@
+.sign-in {
+  width: 30vw;
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  & p {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 300;
+    margin: 1rem 0;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
