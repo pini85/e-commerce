@@ -1,6 +1,7 @@
-.sign-in {
+.sign-up {
   width: 33vw;
   margin: 3rem;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   & p {
@@ -13,5 +14,5 @@
 
 .button-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
