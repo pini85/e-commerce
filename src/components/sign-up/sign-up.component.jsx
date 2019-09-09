@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -12,41 +13,63 @@ class signUp extends React.Component {
       displayName: "",
       email: "",
       password: "",
-      confirmPassword: ""
+      confirmPassword: "",
+      error: ""
     };
   }
+
+  errorMessage = error => {
+    if (error) {
+      if (error.code === "auth/weak-password") {
+        this.setState({
+          error:
+            "Your password is too weak. The password should be at least 6 characters long."
+        });
+      } else if (error.code === "auth/email-already-in-use") {
+        this.setState({
+          error: "Email is already in use. Please try again."
+        });
+      } else if (error === "not same password") {
+        this.setState({
+          error: "Passwords don't match. Please try again."
+        });
+      }
+    }
+  };
 
   handleSubmit = async event => {
     event.preventDefault();
 
     const { displayName, email, password, confirmPassword } = this.state;
     if (password !== confirmPassword) {
-      alert("Password does not match");
+      this.errorMessage("not same password");
       return;
     }
 
     try {
-      console.log(auth);
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(user);
+
       await createUserProfileDocument(user, { displayName });
+
       this.setState({
         displayName: "",
         email: "",
         password: "",
         confirmPassword: ""
       });
-      console.log(displayName);
+      this.props.history.push("/");
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
+      this.errorMessage(error);
     }
   };
 
   handleChange = event => {
     const { name, value } = event.target;
+
     this.setState({ [name]: value });
   };
   render() {
@@ -92,6 +115,7 @@ class signUp extends React.Component {
             <CustomButton type="submit">Sign UP</CustomButton>
           </div>
         </form>
+        <div className="error-message">{this.state.error}</div>
       </div>
     );
   }
