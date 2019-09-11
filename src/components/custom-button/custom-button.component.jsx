@@ -2,6 +2,7 @@ import React from "react";
 import google from "../../assets/svg/google.svg";
 import facebook from "../../assets/svg/facebook.svg";
 import twitter from "../../assets/svg/twitter.svg";
+import github from "../../assets/svg/github.svg";
 
 import "./custom-button.styles.scss";
 
@@ -10,21 +11,34 @@ const CustomButton = ({
   isGoogleSignIn,
   isFaceBookSignIn,
   isTwitterSignIn,
+  isGithubSignIn,
   ...otherProps
 }) => {
-  const socialBtn = (isGoogleSignIn, isFaceBookSignIn, isTwitterSignIn) => {
+  const socialBtn = (
+    isGoogleSignIn,
+    isFaceBookSignIn,
+    isTwitterSignIn,
+    isGithubSignIn
+  ) => {
     if (isGoogleSignIn) {
       return "google-sign-in";
     } else if (isFaceBookSignIn) {
       return "facebook-sign-in";
     } else if (isTwitterSignIn) {
       return "twitter-sign-in";
+    } else if (isGithubSignIn) {
+      return "github-sign-in";
     } else {
       return "";
     }
   };
 
-  const socialIcon = (isGoogleSignIn, isFaceBookSignIn, isTwitterSignIn) => {
+  const socialIcon = (
+    isGoogleSignIn,
+    isFaceBookSignIn,
+    isTwitterSignIn,
+    isGithubSignIn
+  ) => {
     if (isGoogleSignIn) {
       return (
         <div>
@@ -43,6 +57,12 @@ const CustomButton = ({
           <img src={twitter} className="icon facebook" alt="" />
         </div>
       );
+    } else if (isGithubSignIn) {
+      return (
+        <div>
+          <img src={github} className="icon facebook" alt="" />
+        </div>
+      );
     } else {
       return "";
     }
@@ -53,11 +73,17 @@ const CustomButton = ({
       className={`${socialBtn(
         isGoogleSignIn,
         isFaceBookSignIn,
-        isTwitterSignIn
+        isTwitterSignIn,
+        isGithubSignIn
       )} custom-button`}
       {...otherProps}
     >
-      {socialIcon(isGoogleSignIn, isFaceBookSignIn, isTwitterSignIn)}
+      {socialIcon(
+        isGoogleSignIn,
+        isFaceBookSignIn,
+        isTwitterSignIn,
+        isGithubSignIn
+      )}
 
       <span>{children}</span>
     </button>

@@ -7,7 +7,8 @@ import {
   auth,
   signInWithGoogle,
   signInWithFacebook,
-  signInWithTwitter
+  signInWithTwitter,
+  signInWithGithub
 } from "../../firebase/firebase.utils";
 
 class SignIn extends React.Component {
@@ -96,6 +97,9 @@ class SignIn extends React.Component {
               </CustomButton>
               <CustomButton isTwitterSignIn onClick={signInWithTwitter}>
                 Sign in with twitter
+              </CustomButton>
+              <CustomButton isGithubSignIn onClick={signInWithGithub}>
+                Sign in with github
               </CustomButton>
             </div>
           </div>

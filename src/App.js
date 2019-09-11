@@ -22,17 +22,12 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
         //we can get a reference of the documents snapshot by calling this function
         userRef.onSnapshot(snapShotObject => {
-          this.setState(
-            {
-              currentUser: {
-                id: snapShotObject.id,
-                ...snapShotObject.data()
-              }
-            },
-            () => {
-              console.log(this.state);
+          this.setState({
+            currentUser: {
+              id: snapShotObject.id,
+              ...snapShotObject.data()
             }
-          );
+          });
         });
       } else {
         //if userAuth is null we want to set the state to null. Which means no user is signed in.
@@ -50,7 +45,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header user={this.state.currentUser} />
+        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />

@@ -1,11 +1,13 @@
 .custom-button {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
   position: relative;
   font-size: 1.3rem;
   color: white;
   padding: 10px 20px;
   text-transform: uppercase;
-
   background: var(--color-primary-dark);
   outline: none;
   border: none;
@@ -56,6 +58,11 @@
 
 .twitter-sign-in {
   background-color: #38a1f3;
+  margin-top: 2rem;
+}
+
+.github-sign-in {
+  background-color: black;
   margin-top: 2rem;
 }
 
