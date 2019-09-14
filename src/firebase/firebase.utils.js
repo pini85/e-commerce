@@ -44,10 +44,10 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 firebase.initializeApp(config);
 
 //Prompt user for password when signed in with google first
-const promptUserForPassword = () => {
-  const password = prompt("What is your password");
-  return password;
-};
+// const promptUserForPassword = () => {
+//   const password = prompt("What is your password");
+//   return password;
+// };
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -79,6 +79,7 @@ export const signInWithFacebook = async () => {
       var email = error.email;
       // Get sign-in methods for this email.
       auth.fetchSignInMethodsForEmail(email).then(function(methods) {
+        console.log(methods);
         //method === google.com
         // Step 3.
         // If the user has several sign-in methods,
@@ -86,11 +87,13 @@ export const signInWithFacebook = async () => {
         // if (methods[0] === "password") {
         // Asks the user their password.
         // In real scenario, you should handle this asynchronously.
-        var password = promptUserForPassword(); // TODO: implement promptUserForPassword.
-        console.log(password);
+        // var password = promptUserForPassword(); // TODO: implement promptUserForPassword.
+        // console.log(password);
+        const password = "m$m0ry00";
         auth
           .signInWithEmailAndPassword(email, password)
           .then(function(user) {
+            console.log(email, password);
             // Step 4a.
             return user.linkWithCredential(pendingCred);
           })

@@ -1,8 +1,8 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-
+import { connect } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
+import Modal from "../modal/modal.component";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import "./sign-up.styles.scss";
 
@@ -14,7 +14,9 @@ class signUp extends React.Component {
       email: "",
       password: "",
       confirmPassword: "",
-      error: ""
+      error: "",
+      emailConfirmation: "",
+      hideModal: false
     };
   }
 
@@ -37,6 +39,18 @@ class signUp extends React.Component {
     }
   };
 
+  modal = () => {
+    if (this.state.emailConfirmation === false) {
+      return (
+        <div>
+          <Modal></Modal>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   handleSubmit = async event => {
     event.preventDefault();
 
@@ -54,6 +68,26 @@ class signUp extends React.Component {
 
       await createUserProfileDocument(user, { displayName });
 
+      if (user && user.emailVerified === false) {
+        await user.sendEmailVerification();
+
+        this.setState({
+          emailConfirmation: false
+        });
+      }
+      //   await user.emailVerified;
+      //   if (user.emailVerified === false) {
+      //     return (await user.emailVerified) === true;
+      //   }
+      //
+      // }
+      // if (user && user.emailVerified) {
+      //
+      //   this.setState({
+      //     emailConfirmation: true
+      //   });
+      // }
+
       this.setState({
         displayName: "",
         email: "",
@@ -62,7 +96,6 @@ class signUp extends React.Component {
       });
       this.props.history.push("/");
     } catch (error) {
-      console.log(error);
       this.errorMessage(error);
     }
   };
@@ -116,6 +149,7 @@ class signUp extends React.Component {
           </div>
         </form>
         <div className="error-message">{this.state.error}</div>
+        <div className="error-message">{this.modal()}</div>
       </div>
     );
   }

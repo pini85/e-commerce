@@ -1,7 +1,6 @@
 import React from "react";
 import SHOP_DATA from "./shop.data";
 import Carousel from "../../components/carousel/slick-carousel";
-import MoreItems from "../../components/more-items/more-items.component";
 
 class ShopPage extends React.Component {
   constructor(props) {

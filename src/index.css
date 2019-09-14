@@ -1,4 +1,6 @@
-@import "./my_normalize.css";
+@import "./styles/my_normalize.css";
+@import "./styles/base.styles.scss";
+@import "./styles/_typography.styles.scss";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 :root {
@@ -7,15 +9,6 @@
   --color-primary-light: #95c9e7;
   --color-background-dark: #daecf7;
   --color-background-light: #f2f8fc;
-}
-
-html {
-  font-family: "Lato", sans-serif;
-}
-
-body {
-  overflow-x: hidden;
-  background-color: var(--color-background-dark);
 }
 
 .heading-primary {

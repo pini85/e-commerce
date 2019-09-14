@@ -7,6 +7,7 @@ const FormInput = ({ handleChange, label, value, ...otherProps }) => (
     <input
       type="text"
       className="form-input"
+      autoComplete="on"
       onChange={handleChange}
       {...otherProps}
     />
