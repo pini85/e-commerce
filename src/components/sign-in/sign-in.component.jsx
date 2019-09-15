@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Redirect } from "react-router-dom";
 import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -18,7 +18,8 @@ class SignIn extends React.Component {
     this.state = {
       email: "",
       password: "",
-      error: ""
+      error: "",
+      redirect: false
     };
   }
 
@@ -51,6 +52,7 @@ class SignIn extends React.Component {
     try {
       const { email, password } = this.state;
       await auth.signInWithEmailAndPassword(email, password);
+      this.setState({ redirect: true });
     } catch (error) {
       this.errorMessage(error);
     }
@@ -62,6 +64,9 @@ class SignIn extends React.Component {
     this.setState({ [name]: value });
   };
   render() {
+    if (this.state.redirect) {
+      return <Redirect push to="/" />;
+    }
     return (
       <div className="sign-in">
         <h3 className="heading-teritary">I already have an account</h3>

@@ -1,4 +1,4 @@
-.display-block {
+.modal {
   position: absolute;
   z-index: 2;
   top: 50%;
@@ -6,18 +6,14 @@
   transform: translate;
   transform: translate(-50%, -50%);
   background: rgba(black, 0.8);
-  height: 100vh;
-  width: 100%;
+  height: 100vw;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse;
-}
-
-.display-none {
-  display: none;
 }
 
 .modal__heading {

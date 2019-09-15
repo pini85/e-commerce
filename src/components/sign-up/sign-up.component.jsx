@@ -16,9 +16,13 @@ class signUp extends React.Component {
       confirmPassword: "",
       error: "",
       emailConfirmation: "",
-      hideModal: false
+      hide: false
     };
   }
+
+  hideModal = () => {
+    this.setState({ hide: true });
+  };
 
   errorMessage = error => {
     if (error) {
@@ -43,7 +47,9 @@ class signUp extends React.Component {
     if (this.state.emailConfirmation === false) {
       return (
         <div>
-          <Modal></Modal>
+          {this.state.hide === false ? (
+            <Modal hideModal={this.hideModal} />
+          ) : null}
         </div>
       );
     } else {
