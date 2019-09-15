@@ -1,29 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { setModal } from "../../redux/modal/modal.action";
 import "./modal.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
 
 class Modal extends React.Component {
-  state = { hideModal: false };
   componentDidMount() {
     document.body.style.overflow = "hidden";
   }
 
   componentWillUnmount() {
     document.body.style.overflow = "unset";
+    document.body.style.overflowX = "hidden";
   }
 
   render() {
     return (
       <div className="modal">
         <div className="modal__close">
-          <Link
-            to={"/"}
-            onClick={this.props.hideModal}
-            className="modal__button"
-          >
-            <CustomButton> Close</CustomButton>
-          </Link>
+          <CustomButton onClick={this.props.setModal}>
+            Sure thanks!
+          </CustomButton>
         </div>
         <div className="modal__heading">
           <h2>Email confirmation sent!</h2>
@@ -35,5 +32,14 @@ class Modal extends React.Component {
     );
   }
 }
+const mapStateToProps = ({ modal }) => ({
+  modal: modal
+});
+const mapDispatchToProps = dispatch => ({
+  setModal: () => dispatch(setModal(false))
+});
 
-export default Modal;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Modal);

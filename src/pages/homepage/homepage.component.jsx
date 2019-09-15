@@ -1,12 +1,30 @@
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
 
-import Directory from  '../../components/directory/directory.component';
-import './homepage.styles.scss';
+import Modal from "../../components/modal/modal.component";
 
-const Homepage = () => (
-    <div className="homepage">
-       <Directory/>
-    </div>
-)
+import Directory from "../../components/directory/directory.component";
+import "./homepage.styles.scss";
 
-export default Homepage;
+class Homepage extends React.Component {
+  render() {
+    console.log(this.props);
+    return (
+      <div>
+        {this.props.modalState.modal ? (
+          <div>
+            <Modal></Modal>
+          </div>
+        ) : null}
+        <div className="homepage">
+          <Directory />
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  modalState: state.modal
+});
+export default connect(mapStateToProps)(Homepage);

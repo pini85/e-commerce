@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25rem;
   position: relative;
   font-size: 1.3rem;
   color: white;
@@ -48,20 +47,24 @@
 }
 
 .google-sign-in {
+  width: 25rem;
   background-color: #2a75f4;
 }
 
 .facebook-sign-in {
+  width: 25rem;
   background-color: #3a559f;
   margin-top: 2rem;
 }
 
 .twitter-sign-in {
+  width: 25rem;
   background-color: #38a1f3;
   margin-top: 2rem;
 }
 
 .github-sign-in {
+  width: 25rem;
   background-color: black;
   margin-top: 2rem;
 }

@@ -71,6 +71,7 @@ class SignIn extends React.Component {
       <div className="sign-in">
         <h3 className="heading-teritary">I already have an account</h3>
         <p>Sign in with your email and password</p>
+        <div className="error-message">{this.state.error}</div>
         <form onSubmit={this.handleSubmit}>
           <FormInput
             type="email"
@@ -109,7 +110,6 @@ class SignIn extends React.Component {
             </div>
           </div>
         </form>
-        <div className="error-message">{this.state.error}</div>
       </div>
     );
   }

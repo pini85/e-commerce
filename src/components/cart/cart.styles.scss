@@ -1,0 +1,42 @@
+.icon-container {
+  position: relative;
+  height: 3rem;
+}
+
+.icon-count {
+  position: absolute;
+  z-index: 6;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border-radius: 1px solid white;
+  border: 1px soid white;
+  /* border: 1px solid white; */
+  /* border-radius: 200px; */
+  top: -15px;
+  left: 14px;
+  transform: rotate(27deg);
+}
+
+.icon-count-animate {
+  animation-name: drop;
+  animation-delay: 0.2s;
+
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drop {
+  0% {
+    color: inherit;
+    transform: rotate(27deg) translateY(0px);
+  }
+
+  50% {
+    transform: translateY(27.5px);
+  }
+  100% {
+    color: var(--color-primary);
+    transform: rotate(0deg) translateY(55px);
+  }
+}

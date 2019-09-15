@@ -1,6 +1,6 @@
 .modal {
   position: absolute;
-  z-index: 2;
+  z-index: 999;
   top: 50%;
   left: 50%;
   transform: translate;
@@ -17,5 +17,7 @@
 }
 
 .modal__heading {
+  text-align: center;
+  margin-bottom: 1rem;
   color: var(--color-primary-dark);
 }
