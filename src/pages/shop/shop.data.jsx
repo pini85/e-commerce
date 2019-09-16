@@ -100,7 +100,7 @@ const SHOP_DATA = [
     routeName: "sneakers",
     items: [
       {
-        id: 1,
+        id: 10,
         index: 0,
         sale: true,
         salePercentage: 10,
@@ -110,7 +110,7 @@ const SHOP_DATA = [
         price: 220
       },
       {
-        id: 2,
+        id: 11,
         index: 1,
         sale: false,
         salePercentage: "",
@@ -120,7 +120,7 @@ const SHOP_DATA = [
         price: 280
       },
       {
-        id: 3,
+        id: 12,
         index: 2,
         sale: true,
         salePercentage: 30,
@@ -130,7 +130,7 @@ const SHOP_DATA = [
         price: 110
       },
       {
-        id: 4,
+        id: 13,
         index: 3,
         sale: false,
         salePercentage: "",
@@ -140,7 +140,7 @@ const SHOP_DATA = [
         price: 160
       },
       {
-        id: 5,
+        id: 14,
         index: 4,
         sale: false,
         salePercentage: "",
@@ -150,7 +150,7 @@ const SHOP_DATA = [
         price: 160
       },
       {
-        id: 6,
+        id: 15,
         index: 5,
         sale: true,
         salePercentage: 5,
@@ -160,7 +160,7 @@ const SHOP_DATA = [
         price: 160
       },
       {
-        id: 7,
+        id: 16,
         index: 6,
         sale: true,
         salePercentage: 80,
@@ -170,7 +170,7 @@ const SHOP_DATA = [
         price: 190
       },
       {
-        id: 8,
+        id: 17,
         index: 7,
         sale: false,
         salePercentage: "",
@@ -187,7 +187,7 @@ const SHOP_DATA = [
     routeName: "jackets",
     items: [
       {
-        id: 1,
+        id: 18,
         index: 0,
         sale: false,
         salePercentage: "",
@@ -197,7 +197,7 @@ const SHOP_DATA = [
         price: 125
       },
       {
-        id: 2,
+        id: 19,
         index: 1,
         sale: true,
         salePercentage: "10",
@@ -207,7 +207,7 @@ const SHOP_DATA = [
         price: 90
       },
       {
-        id: 3,
+        id: 20,
         index: 2,
         sale: false,
         salePercentage: "",
@@ -217,7 +217,7 @@ const SHOP_DATA = [
         price: 90
       },
       {
-        id: 4,
+        id: 21,
         index: 3,
         sale: true,
         salePercentage: "5",
@@ -227,7 +227,7 @@ const SHOP_DATA = [
         price: 165
       },
       {
-        id: 5,
+        id: 22,
         index: 4,
         sale: false,
         salePercentage: "",
@@ -244,7 +244,7 @@ const SHOP_DATA = [
     routeName: "womens",
     items: [
       {
-        id: 1,
+        id: 23,
         index: 0,
         sale: true,
         salePercentage: "15",
@@ -254,7 +254,7 @@ const SHOP_DATA = [
         price: 25
       },
       {
-        id: 2,
+        id: 24,
         index: 1,
         sale: false,
         salePercentage: "",
@@ -264,7 +264,7 @@ const SHOP_DATA = [
         price: 20
       },
       {
-        id: 3,
+        id: 25,
         index: 2,
         sale: false,
         salePercentage: "",
@@ -274,7 +274,7 @@ const SHOP_DATA = [
         price: 80
       },
       {
-        id: 4,
+        id: 26,
         index: 3,
         sale: false,
         salePercentage: "",
@@ -284,7 +284,7 @@ const SHOP_DATA = [
         price: 80
       },
       {
-        id: 5,
+        id: 27,
         index: 4,
         sale: false,
         salePercentage: "",
@@ -294,7 +294,7 @@ const SHOP_DATA = [
         price: 45
       },
       {
-        id: 6,
+        id: 28,
         index: 5,
         sale: true,
         salePercentage: "7",
@@ -304,7 +304,7 @@ const SHOP_DATA = [
         price: 135
       },
       {
-        id: 7,
+        id: 29,
         index: 6,
         sale: false,
         salePercentage: "",
@@ -324,7 +324,7 @@ const SHOP_DATA = [
     routeName: "mens",
     items: [
       {
-        id: 1,
+        id: 30,
         index: 0,
         sale: true,
         salePercentage: "7",
@@ -334,7 +334,7 @@ const SHOP_DATA = [
         price: 325
       },
       {
-        id: 2,
+        id: 31,
         index: 1,
         sale: false,
         salePercentage: "",
@@ -344,7 +344,7 @@ const SHOP_DATA = [
         price: 20
       },
       {
-        id: 3,
+        id: 32,
         index: 2,
         sale: false,
         salePercentage: "",
@@ -354,7 +354,7 @@ const SHOP_DATA = [
         price: 25
       },
       {
-        id: 4,
+        id: 33,
         index: 3,
         sale: false,
         salePercentage: "",
@@ -364,7 +364,7 @@ const SHOP_DATA = [
         price: 25
       },
       {
-        id: 5,
+        id: 34,
         index: 4,
         sale: false,
         salePercentage: "",
@@ -374,7 +374,7 @@ const SHOP_DATA = [
         price: 40
       },
       {
-        id: 6,
+        id: 35,
         index: 5,
         sale: false,
         salePercentage: "",

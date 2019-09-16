@@ -8,7 +8,7 @@ class Carousel extends Component {
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       arrows: true
     };
@@ -17,7 +17,7 @@ class Carousel extends Component {
       <div className="test">
         <Slider {...settings}>
           {this.props.data.map(items => {
-            return <Card key={items.id} property={items} />;
+            return <Card key={items.id} item={items} />;
           })}
         </Slider>
       </div>

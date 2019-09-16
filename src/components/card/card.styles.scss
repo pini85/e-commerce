@@ -1,16 +1,62 @@
 .card {
+  position: relative;
+  perspective: 150rem;
   display: inline-block;
   padding: 0 5%;
   width: 100%;
   border-radius: 5px;
+  &__layer {
+    transition: all 0.5s;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    background-color: rgba(250, 250, 250, 0.7);
+    z-index: 998;
+  }
+
+  &:hover .card__layer {
+    opacity: 1;
+  }
+  &:hover .card__hover {
+    opacity: 0.8;
+  }
+
+  &__hover {
+    border-radius: 8px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid var(--color-primary-dark);
+    color: white;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: all 0.2s;
+    opacity: 0;
+    position: absolute;
+    height: 8rem;
+    width: 11rem;
+    background-color: var(--color-primary);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      opacity: 1 !important;
+      font-size: 1.7rem;
+      font-weight: 900;
+    }
+  }
 
   &__img {
     background-size: cover;
     background-position: center;
     height: 16rem;
-    width: 16rem;
-    margin-top: 2rem;
-    margin-left: 3rem;
+    width: 13rem;
     object-fit: contain;
 
     &-container {
@@ -19,70 +65,69 @@
         var(--color-primary-dark) 0%,
         var(--color-primary) 100%
       );
+      border-radius: 5px;
       position: relative;
       overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       background-color: transparent;
-      // width: 32rem;
-      // height: 22rem;
-    }
-  }
-  &__sale {
-    font-size: 1.5rem;
-    background: red;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    &-container {
-      background: #ed213921;
-      border: 1px solid rgba(black, 0.1);
-      width: 14rem;
-      position: absolute;
-      text-align: center;
-      top: 74%;
-      left: 80%;
-      z-index: 1;
-      transform: rotate(-45deg);
     }
   }
 
   &__bottom {
-    width: 100%;
-    color: white;
-
     display: flex;
-    flex-direction: column;
+    // justify-content: center;
     align-items: center;
+  }
+
+  &__sale {
+    font-size: 0.8rem;
+    color: red;
   }
 
   &__title {
     font-size: 2.5rem;
-    text-align: center;
-  }
+    font-weight: 500;
 
-  &__divider {
-    background-color: gray;
-    opacity: 0.3;
-    height: 3rem;
-    width: 1px;
-    margin-left: auto;
+    text-align: center;
+    color: white;
+    &::after {
+      content: "";
+      width: 80%;
+      height: 1px;
+      position: absolute;
+      top: 38px;
+      left: 10%;
+      background-color: white;
+      opacity: 0.2;
+    }
   }
 
   &__price {
+    text-align: center;
+    justify-self: center;
+    color: white;
+    font-weight: 200;
+    padding-bottom: 0.5rem;
+    margin: 0 1rem;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 500;
+
+    &::after {
+      content: "";
+      width: 80%;
+      height: 1px;
+      position: absolute;
+      top: 83%;
+      left: 10%;
+      background-color: white;
+      opacity: 0.2;
+    }
   }
   &__exclusive {
-    text-align: center;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     color: gold;
-    &-container {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      background-color: #fbf5b72d;
-    }
   }
 }

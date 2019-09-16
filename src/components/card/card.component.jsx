@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cart.action";
 import "./card.styles.scss";
 
-const Card = ({ property }) => {
+const Card = ({ item, addItem }) => {
   const exclusive = () => {
-    if (property.exclusive === true) {
+    if (item.exclusive === true) {
       return (
         <div className="card__exclusive-container">
           <div className="card__exclusive"> EXCLUSIVE </div>
@@ -12,40 +14,38 @@ const Card = ({ property }) => {
     }
   };
   const sale = () => {
-    if (property.sale === true) {
+    if (item.sale === true) {
       return (
         <div className="card__sale-container">
-          <div className="card__sale"> {property.salePercentage}% OFF! </div>
+          <div className="card__sale"> {item.salePercentage}% OFF! </div>
         </div>
       );
     }
   };
   return (
-    <div className={`card card-${property.index}`}>
+    <div className={`card card-${item.index}`}>
+      <div className="card__layer"></div>
       <div className="card__img-container">
-        {exclusive()}
-        <img src={"" + property.imageUrl} className="card__img" alt="" />
-        {sale()}
-        <div className="card__bottom">
-          <div className="card__title">{property.name}</div>
+        <div className="card__title">{item.name}</div>
+        <img src={"" + item.imageUrl} className="card__img" alt="" />
 
-          <div className="card__price">{property.price}$</div>
+        <div className="card__bottom">
+          {exclusive()}
+          <div className="card__price">{item.price}$</div>
+          {sale()}
         </div>
+      </div>
+      <div onClick={() => addItem(item)} className="card__hover">
+        Add to cart
       </div>
     </div>
   );
 };
-export default Card;
-/*
- Having difficulty showing a dynamic image from my local files.
- I need to use require in order for webpack to understand you want to show the image 
- This works:
- <img src={require("../../assets/shop/shoes/1.png")} />
- but if I want to fetch it from an external jsx it doesnt work. Module not found:
-    <img src={require("" + property.imageUrl)} alt="" />
-    also not like this:
-     <img src={require(property.imageUrl)} alt="" />
-     So i had to fetch the images from outside
 
-
-*/
+const mapStateToDispatch = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+export default connect(
+  null,
+  mapStateToDispatch
+)(Card);
