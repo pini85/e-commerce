@@ -25,18 +25,3 @@
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
-
-@keyframes drop {
-  0% {
-    color: inherit;
-    transform: rotate(27deg) translateY(0px);
-  }
-
-  50% {
-    transform: translateY(27.5px);
-  }
-  100% {
-    color: var(--color-primary);
-    transform: rotate(0deg) translateY(55px);
-  }
-}

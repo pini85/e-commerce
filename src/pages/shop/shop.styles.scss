@@ -1,6 +1,9 @@
-.item {
+.show-more {
+  font-size: 2rem;
+  text-align: center;
   &__title {
-  }
-  &__show-more {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
   }
 }

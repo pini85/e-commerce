@@ -18,13 +18,11 @@ class SignIn extends React.Component {
     this.state = {
       email: "",
       password: "",
-      error: "",
-      redirect: false
+      error: ""
     };
   }
 
   errorMessage = error => {
-    console.log(error);
     if (error) {
       if (error.code === "auth/wrong-password") {
         this.setState({
@@ -42,17 +40,17 @@ class SignIn extends React.Component {
       } else if (
         error.code === "auth/account-exists-with-different-credential"
       ) {
-        console.log("ERROR!!!!!");
       }
     }
   };
 
   handleSubmit = async event => {
     event.preventDefault();
+    document.querySelector(".form").reset();
+    this.setState({ email: "", password: "" });
     try {
       const { email, password } = this.state;
       await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ redirect: true });
     } catch (error) {
       this.errorMessage(error);
     }
@@ -63,16 +61,14 @@ class SignIn extends React.Component {
     const { value, name } = event.target;
     this.setState({ [name]: value });
   };
+
   render() {
-    if (this.state.redirect) {
-      return <Redirect push to="/" />;
-    }
     return (
       <div className="sign-in">
         <h3 className="heading-teritary">I already have an account</h3>
         <p>Sign in with your email and password</p>
         <div className="error-message">{this.state.error}</div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <FormInput
             type="email"
             name="email"

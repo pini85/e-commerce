@@ -1,0 +1,19 @@
+.slick-carousel {
+  margin: 0 5rem;
+}
+
+.slick-arrow {
+  display: absolute !important;
+  z-index: 1;
+  color: transparent;
+  font-size: 3rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: lightblue;
+}
+
+.test {
+  margin: 0 5rem;
+}

@@ -1,53 +1,7 @@
 @import "./styles/my_normalize.css";
 @import "./styles/base.styles.scss";
 @import "./styles/_typography.styles.scss";
+@import "./styles/animations.scss";
+@import "./styles//variables.scss";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-:root {
-  --color-primary: #4fa6d8;
-  --color-primary-dark: #2985ba;
-  --color-primary-light: #95c9e7;
-  --color-background-dark: #daecf7;
-  --color-background-light: #f2f8fc;
-  --color-text-dark: #0a222f;
-  --color-text-light: #e8f3fa;
-}
-
-.heading-primary {
-  font-size: 6rem;
-  text-align: center;
-}
-
-.heading-secondary {
-  font-size: 4.5rem;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.heading-teritary {
-  font-size: 2.5rem;
-  text-align: center;
-}
-
-.slick-list {
-  /* margin: 0 20rem; */
-}
-.slick-arrow {
-  display: absolute !important;
-  z-index: 1;
-  color: transparent;
-  font-size: 3rem;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  color: lightblue;
-}
-
-.test {
-  margin: 0 5rem;
-}
-
-.slick-slide .card {
-  margin: 10px;
-}

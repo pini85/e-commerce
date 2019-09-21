@@ -1,6 +1,7 @@
 import React from "react";
 import SHOP_DATA from "./shop.data";
 import Carousel from "../../components/carousel/slick-carousel";
+import "./shop.styles.scss";
 
 class ShopPage extends React.Component {
   constructor(props) {
@@ -26,8 +27,8 @@ class ShopPage extends React.Component {
               <div>
                 <Carousel key={item.id} data={sixItems}></Carousel>;
               </div>
-              <div className="item__show-more">
-                <h3 className="heading-teritary">{`show more ${item.title}`}</h3>
+              <div className="show-more">
+                <h3 className="show-more__title">{`show more ${item.title}`}</h3>
               </div>
             </div>
           );

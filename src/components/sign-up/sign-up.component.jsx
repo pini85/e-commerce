@@ -95,13 +95,15 @@ class signUp extends React.Component {
       //     emailConfirmation: true
       //   });
       // }
-
+      document.querySelector(".form").reset();
       this.setState({
         displayName: "",
         email: "",
         password: "",
         confirmPassword: ""
       });
+
+      console.log(this.state);
       //Setting up the modal for the homepage
       this.props.setModal();
 
@@ -129,7 +131,7 @@ class signUp extends React.Component {
             <Modal></Modal>
           </div>
         ) : null} */}
-        <form className="sign-up-form" onSubmit={this.handleSubmit}>
+        <form className="sign-up-form form" onSubmit={this.handleSubmit}>
           <FormInput
             type="text"
             name="displayName"

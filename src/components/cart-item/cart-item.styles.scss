@@ -1,0 +1,29 @@
+.cart-item {
+  display: flex;
+  justify-content: center;
+
+  padding: 1rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    height: 1px;
+    width: 80%;
+    \transform: translatey(70px);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &__img {
+    height: 6rem;
+    width: 6rem;
+    margin-right: 2rem;
+  }
+  &__name {
+    font-size: 1.5rem;
+  }
+
+  &__price {
+  }
+  &__details {
+  }
+}
