@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setModal } from "../../redux/modal/modal.action";
 import "./modal.styles.scss";
 import CustomButton from "../custom-button/custom-button.component";
+import { modal } from "../../redux/modal/modal.selectors";
 
 class Modal extends React.Component {
   componentDidMount() {

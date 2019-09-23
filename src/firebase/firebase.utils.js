@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore"; //database
 import "firebase/auth";
+import "../components/popup/popup.component.jsx";
 
 const config = {
   apiKey: "AIzaSyA30gN3jQR0hPxIhIG_SqLHDSgQyMmOifo",
@@ -43,10 +44,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 firebase.initializeApp(config);
 
 // Prompt user for password when signed in with google first
-const promptUserForPassword = () => {
-  const password = prompt("What is your password");
-  return password;
-};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
@@ -60,9 +57,63 @@ googleProvider.setCustomParameters({ prompt: "select_account" });
 facebookProvider.setCustomParameters({ prompt: "Login with Facebook!!!!" });
 //We want to only give them the provider which is google. We also have twitter facebook etc.
 export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
-export const signInWithTwitter = () => auth.signInWithPopup(twitterProvider);
-export const signInWithGithub = () => auth.signInWithPopup(githubProvider);
-// export const signInWithFacebook = () => auth.signInWithPopup(facebookProvider);
+// export const signInWithTwitter = () => auth.signInWithPopup(twitterProvider);
+
+export const signInWithTwitter = async user => {
+  try {
+    await auth.signInWithPopup(twitterProvider);
+  } catch (error) {
+    if (error.code === "auth/account-exists-with-different-credential") {
+      console.log("yeah doesnt work ffs");
+      var pendingCred = error.credential;
+      console.log(pendingCred);
+      var email = error.email;
+      // Get sign-in methods for this email.
+      auth.fetchSignInMethodsForEmail(email).then(function(methods) {
+        if (methods[0] === "google.com") {
+          auth
+            .signInWithPopup(googleProvider)
+            .then(function(currentUser) {
+              console.log(currentUser);
+              firebase.auth().currentUser.linkWithCredential(pendingCred);
+            })
+            .then(function() {
+              console.log("successful");
+            });
+        }
+        return;
+      });
+    }
+  }
+};
+export const signInWithGithub = async user => {
+  try {
+    await auth.signInWithPopup(githubProvider);
+  } catch (error) {
+    if (error.code === "auth/account-exists-with-different-credential") {
+      console.log("yeah doesnt work ffs");
+      var pendingCred = error.credential;
+      console.log(pendingCred);
+      var email = error.email;
+      // Get sign-in methods for this email.
+      auth.fetchSignInMethodsForEmail(email).then(function(methods) {
+        if (methods[0] === "google.com") {
+          auth
+            .signInWithPopup(googleProvider)
+            .then(function(currentUser) {
+              console.log(currentUser);
+              firebase.auth().currentUser.linkWithCredential(pendingCred);
+            })
+            .then(function() {
+              console.log("successful");
+            });
+        }
+        return;
+      });
+    }
+  }
+};
+
 export const signInWithFacebook = async user => {
   try {
     await auth.signInWithPopup(facebookProvider);
@@ -74,18 +125,17 @@ export const signInWithFacebook = async user => {
       var email = error.email;
       // Get sign-in methods for this email.
       auth.fetchSignInMethodsForEmail(email).then(function(methods) {
-        console.log(methods);
-        //method === google.com
-        const password = promptUserForPassword(); // TODO: implement promptUserForPassword.
-
-        auth
-          .signInWithEmailAndPassword(email, password)
-          .then(function(user) {
-            return user.linkWithCredential(pendingCred);
-          })
-          .then(function() {
-            console.log("successful");
-          });
+        if (methods[0] === "google.com") {
+          auth
+            .signInWithPopup(googleProvider)
+            .then(function(currentUser) {
+              console.log(currentUser);
+              firebase.auth().currentUser.linkWithCredential(pendingCred);
+            })
+            .then(function() {
+              console.log("successful");
+            });
+        }
         return;
       });
     }
@@ -93,15 +143,6 @@ export const signInWithFacebook = async user => {
 };
 
 export default firebase;
-
-// andleSubmit = async event => {
-//   event.preventDefault();
-//   try {
-//     const { email, password } = this.state;
-//     await auth.signInWithEmailAndPassword(email, password);
-//   } catch (error) {
-//     this.errorMessage(error);
-//   }
 
 /*
 Collection => Reference(Remember how firebase database works!)

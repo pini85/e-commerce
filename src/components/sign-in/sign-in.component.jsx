@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
@@ -10,6 +9,7 @@ import {
   signInWithTwitter,
   signInWithGithub
 } from "../../firebase/firebase.utils";
+import Facebook from "../facebook/facebook.component";
 
 class SignIn extends React.Component {
   constructor(props) {

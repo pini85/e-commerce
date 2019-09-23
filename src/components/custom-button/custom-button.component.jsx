@@ -12,6 +12,7 @@ const CustomButton = ({
   isFaceBookSignIn,
   isTwitterSignIn,
   isGithubSignIn,
+  isEmpty,
   ...otherProps
 }) => {
   const socialBtn = (
@@ -70,6 +71,7 @@ const CustomButton = ({
 
   return (
     <button
+      disabled={isEmpty}
       className={`${socialBtn(
         isGoogleSignIn,
         isFaceBookSignIn,

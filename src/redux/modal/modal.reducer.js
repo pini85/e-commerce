@@ -1,6 +1,6 @@
 import { ModalActionTypes } from "./modal.types";
 const INITIAL_STATE = {
-  modal: false
+  modalHidden: true
 };
 const modalReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

@@ -1,7 +1,6 @@
 import React from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
-import Modal from "../modal/modal.component";
 import { setModal } from "../../redux/modal/modal.action";
 import { connect } from "react-redux";
 
@@ -16,15 +15,9 @@ class signUp extends React.Component {
       email: "",
       password: "",
       confirmPassword: "",
-      error: "",
-      emailConfirmation: "",
-      hide: false
+      error: ""
     };
   }
-
-  hideModal = () => {
-    this.setState({ hide: true });
-  };
 
   errorMessage = error => {
     if (error) {
@@ -45,22 +38,9 @@ class signUp extends React.Component {
     }
   };
 
-  modal = () => {
-    if (this.state.emailConfirmation === false) {
-      return (
-        <div>
-          {this.state.hide === false ? (
-            <Modal hideModal={this.hideModal} />
-          ) : null}
-        </div>
-      );
-    } else {
-      return null;
-    }
-  };
-
   handleSubmit = async event => {
     event.preventDefault();
+    document.querySelector(".form").reset();
 
     const { displayName, email, password, confirmPassword } = this.state;
     if (password !== confirmPassword) {
@@ -78,10 +58,6 @@ class signUp extends React.Component {
 
       if (user && user.emailVerified === false) {
         await user.sendEmailVerification();
-
-        this.setState({
-          emailConfirmation: false
-        });
       }
       //   await user.emailVerified;
       //   if (user.emailVerified === false) {
@@ -95,19 +71,15 @@ class signUp extends React.Component {
       //     emailConfirmation: true
       //   });
       // }
-      document.querySelector(".form").reset();
+      //Setting up the modal for the homepage
+      this.props.setModal();
+      document.querySelector(".sign-up-form").reset();
       this.setState({
         displayName: "",
         email: "",
         password: "",
         confirmPassword: ""
       });
-
-      console.log(this.state);
-      //Setting up the modal for the homepage
-      this.props.setModal();
-
-      // this.props.history.push("/");
     } catch (error) {
       this.errorMessage(error);
     }
@@ -125,13 +97,7 @@ class signUp extends React.Component {
         <h3 className="heading-teritary">I do not have an account</h3>
         <p>Sign up with your email and password</p>
         <div className="error-message">{this.state.error}</div>
-
-        {/* {this.props.modalState.modal ? (
-          <div>
-            <Modal></Modal>
-          </div>
-        ) : null} */}
-        <form className="sign-up-form form" onSubmit={this.handleSubmit}>
+        <form className="sign-up-form" onSubmit={this.handleSubmit}>
           <FormInput
             type="text"
             name="displayName"
@@ -173,27 +139,11 @@ class signUp extends React.Component {
   }
 }
 
-// const mapStateToProps = ({ modal }) => (
-//   {
-//     setModal: modal
-//   },
-//
-// );
-
-// const mapStateToProps = state => (
-//   {
-//     modal: state.modal
-//   },
-//
-// );
-const mapStateToProps = state => ({
-  modalState: state.modal
-});
 const mapStateToDispatch = dispatch => ({
   setModal: () => dispatch(setModal(true))
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapStateToDispatch
 )(signUp);
