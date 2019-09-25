@@ -4,6 +4,7 @@ import "./cart-dropdown.styles.scss";
 import CartItem from "../cart-item/cart-item.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { selectCartItems } from "../../redux/cart/cart.selectors";
+import { toggleCartHidden } from "../../redux/cart/cart.action";
 import { withRouter } from "react-router-dom";
 
 class CartDropDown extends React.Component {
@@ -16,6 +17,7 @@ class CartDropDown extends React.Component {
       this.setState({ empty: false });
     }
   }
+
   render() {
     return (
       <div className="cart-dropdown">
@@ -32,9 +34,11 @@ class CartDropDown extends React.Component {
           )}
         </div>
         <div className="cart-dropdown-button">
-          {/* onClick={() => this.history.push(`${match.url}${linkUrl}`)} */}
           <CustomButton
-            onClick={() => this.props.history.push("/checkout")}
+            onClick={() => {
+              this.props.history.push("/checkout");
+              this.props.hideCart();
+            }}
             isEmpty={this.state.empty}
           >
             Proceed to checkout
@@ -44,8 +48,15 @@ class CartDropDown extends React.Component {
     );
   }
 }
-
+const mapStateToDispatch = dispatch => ({
+  hideCart: () => dispatch(toggleCartHidden())
+});
 const mapStateToProps = state => ({
   cartItems: selectCartItems(state)
 });
-export default withRouter(connect(mapStateToProps)(CartDropDown));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapStateToDispatch
+  )(CartDropDown)
+);
